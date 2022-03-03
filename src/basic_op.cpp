@@ -1,4 +1,5 @@
 #include "main.h"
+#include <Math.h>
 
 using namespace std;
 
@@ -125,11 +126,11 @@ void chassis_rotate(int speed, bool clockwise) {
     chassis_drive(speed_modifier * speed, -1 * speed_modifier * speed);
 }
 
-int calculate_rotate_speed(int delta) {
-    if (std::abs(delta) < 30) {
-        return 50;
+double calculate_rotate_speed(double delta, double degree) {
+    if (std::abs(delta) < degree/7+6) {
+        return -150;
     }
-    return 60;
+    return pow(delta/degree,0.2)*130;
 }
 
 int calculate_rotation_threshold(int degree) {
@@ -160,7 +161,7 @@ void chassis_turn(double degree) {
     double last_delta = std::abs(delta);
 
     while (std::abs(delta) > chass_rotate_degree_threshold) {
-        int speed = calculate_rotate_speed(delta);
+        double speed = calculate_rotate_speed(delta, degree);
         chassis_rotate(speed, delta > 0);
         pros::delay(20);
         
@@ -253,8 +254,6 @@ void chassis_drive_until_distance(int stop_distance, int speed) {
         pros::delay(20);
         distance = distance_sensor.get();
     }
-    chassis_drive(-200, -200);
-    pros::delay(30);
     chassis_drive(0,0);
 
     // pros::delay(500);

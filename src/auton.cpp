@@ -112,110 +112,15 @@ void right_side_two_mogos() {
     arm_right.move_absolute(24,200);
     front_claw_drive(false);
     rear_piston_drive(false);
-    chassis_drive_until_distance(156,30);
+
+    chassis_drive_until_distance(150,200);
+    mogo_cover_drive(false);
+    // chassis_drive_distance(1500,-200);
 
     front_claw_drive(true);
     chassis_drive_distance(620,200);
 
-    // front_claw_drive(false);
-    // chassis_drive_distance(200,100);
-    // pros::delay(100);
-    // chassis_turn(-33.1);
 
-    // arm_right.move_absolute(24,200);
-    // chassis_drive_distance(1980,-180);
-    // pros::delay(100);
-    // front_claw_drive(true);
-    // pros::delay(100);
-
-    // chassis_drive_distance(1100, 200);
-    // front_claw_drive(false);
-    // pros::delay(200);
-    // chassis_drive_distance(160,160);
-
-    // pros::delay(100);
-    // chassis_turn(-74);
-    // chassis_drive_distance(320,110);
-    // pros::delay(300);
-    // rear_piston_drive(true);
-
-    // chassis_drive_distance(50,-120);
-    // arm_right.move_absolute(-200,200);
-    // arm_drive(2);
-
-
-    
-
-
-
-//     chassis_drive_distance(734,60);
-
-//     rear_arm_drive(1);
-//     arm_right.move_absolute(-140,200);
-//     chassis_turn(113.5);
-
-//     chassis_drive_distance(1240,60);
-//     pros::delay(600);
-//     rear_arm_drive(2);
-
-//     chassis_drive_distance(1140,-60);
-//     arm_right.move_absolute(-140,200);
-//     chassis_turn(-160);
-
-//     chassis_drive_distance(290,60);
-//     rear_arm_drive(1);
-//     pros::delay(1000);
-//     chassis_drive(130,130);
-//     pros::delay(190);
-//     chassis_drive(0,0);
-//     rear_arm_drive(2);
-
-
-    // pros::delay(300);
-        
-    // chassis_drive_distance(180, 60);
-    // rear_arm_drive(2);
-
-    // chassis_turn(-17);
-    // rear_arm_drive(1);
-    // chassis_drive_distance(-300,40);
-
-
-    // chassis_drive(150,-150);
-    // pros::delay(600);
-    // chassis_drive(0,0);
-
-    // // chassis_turn(50);
-    // chassis_drive_distance(1600, -60);
-
-    // rear_arm_drive(1);
-    // chassis_drive_distance(500,-60);
-
-    // front_arm_preset(0);
-
-
-
-    // while (distance_not_met || arm_not_lower) {
-    //     if (distance_not_met) {
-    //         chassis_motor_run()
-    //     }
-    //     if (arm_not_lowered) {
-    //         arm_motor_run()
-    //     }
-    //     delay(20);
-    //     // check if condition met
-    //     if (distance_met) {
-    //         distance_not_met = false
-    //         stop_chassi_motor();
-    //     }
-    //     if (arm_lowered) {
-    //         arm_not_lowered = false;
-    //         stop_arm_motor();
-    //     }
-    // }
-
-
-    // pros::delay(2000);
 }
 
 
