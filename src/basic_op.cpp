@@ -127,10 +127,10 @@ void chassis_rotate(int speed, bool clockwise) {
 }
 
 double calculate_rotate_speed(double delta, double degree) {
-    if (std::abs(delta) < degree/7+6) {
+    if (std::abs(delta) < abs(degree)/7-11) {
         return -150;
     }
-    return pow(delta/degree,0.2)*130;
+    return pow(delta/degree,0.6)*150;
 }
 
 int calculate_rotation_threshold(int degree) {
