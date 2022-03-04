@@ -38,12 +38,13 @@ void on_left_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Hello PROS User!");
+	screen::setup_screen();
+	// pros::lcd::initialize();
+	// pros::lcd::set_text(1, "Hello PROS User!");
 
-	pros::lcd::register_btn1_cb(on_center_button);
-	pros::lcd::register_btn0_cb(on_left_button);
-	pros::lcd::register_btn2_cb(on_right_button);
+	// pros::lcd::register_btn1_cb(on_center_button);
+	// pros::lcd::register_btn0_cb(on_left_button);
+	// pros::lcd::register_btn2_cb(on_right_button);
 
 	// cout << "resetting imu sensor ..." << endl;
 	// imu_sensor.reset();
@@ -80,14 +81,39 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	auton_selector = 2;
+	// auton_selector = 2;
 
-	if (auton_selector == 1) {
-		right_side_one_mogo_rings();
-	} else if (auton_selector == 2) {
-		right_side_two_mogos();
-	} else if (auton_selector == 3) {
-		left_side();
+	// if (auton_selector == 1) {
+	// 	right_side_one_mogo_rings();
+	// } else if (auton_selector == 2) {
+	// 	right_side_two_mogos();
+	// } else if (auton_selector == 3) {
+	// 	left_side();
+	// }
+
+	auto program = screen::get_selected_program();
+	if (program == "Alpha") {
+		alpha::auton();
+	} else if (program == "Bravo") {
+		bravo::auton();
+	} else if (program == "Charlie") {
+		charley::auton();
+	} else if (program == "Delta") {
+		delta::auton();
+	} else if (program == "Echo") {
+		echo::auton();
+	} else if (program == "Kilo") {
+		kilo::auton();
+	} else if (program == "Lima") {
+		lima::auton();
+	} else if (program == "Mike") {
+		mike::auton();
+	} else if (program == "November") {
+		november::auton();
+	} else if (program == "Oscar") {
+		oscar::auton();
+	} else {
+		alpha::auton();
 	}
 }
 

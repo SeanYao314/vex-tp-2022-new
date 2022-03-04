@@ -142,10 +142,44 @@ void right_side_two_mogos();
 void left_side();
 void right_side_one_mogo_rings();
 
-
 #ifdef __cplusplus
 }
 #endif
 
+namespace alpha {
+    void auton();
+}
+namespace bravo {
+    void auton();
+}
+namespace charley {
+    void auton();
+}
+namespace delta {
+    void auton();
+}
+namespace echo {
+    void auton();
+}
+namespace kilo {
+    void auton();
+}
+namespace lima {
+    void auton();
+}
+namespace mike {
+    void auton();
+}
+namespace november {
+    void auton();
+}
+namespace oscar {
+    void auton();
+}
+
+namespace screen {
+    void setup_screen();
+    const char * get_selected_program();
+}
 
 #endif  // _PROS_MAIN_H_
