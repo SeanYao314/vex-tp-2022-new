@@ -113,7 +113,7 @@ void autonomous() {
 	} else if (program == "Oscar") {
 		oscar::auton();
 	} else {
-		alpha::auton();
+		right_side_two_mogos();
 	}
 }
 
