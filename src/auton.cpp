@@ -132,9 +132,9 @@ void right_side_two_mogos() {
     arm_left.move_relative(760,200);
 
     pros::delay(400);
-    arm_left.move(-200);
+    arm_left.move(-150);
 
-    chassis_drive_distance(270,-70);
+    chassis_drive_distance(320,-90);
 
     pros::delay(500);
     chassis_drive_distance(50,80);
@@ -142,8 +142,8 @@ void right_side_two_mogos() {
     currentPos = imu_sensor.get_heading();
     chassis_turn((initPos-currentPos)-2);
 
-    chassis_drive_distance(1350,-50);
-    chassis_drive_distance(1350,60);
+    chassis_drive_distance(1350,-40);
+    chassis_drive_distance(1350,70);
 
 
 }

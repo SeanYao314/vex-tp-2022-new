@@ -130,7 +130,7 @@ double calculate_rotate_speed(double delta, double degree) {
     if (std::abs(delta) < abs(degree)/7-11) {
         return -150;
     }
-    return pow(delta/degree,0.6)*150;
+    return pow(delta/degree,0.6)*140;
 }
 
 int calculate_rotation_threshold(int degree) {
