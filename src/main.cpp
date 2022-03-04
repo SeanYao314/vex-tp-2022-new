@@ -113,15 +113,15 @@ void autonomous() {
 	} else if (program == "Oscar") {
 		oscar::auton();
 	} else if (program == "Victor") {
-		kilo::auton();
+		victor::auton();
 	} else if (program == "Uniform") {
-		lima::auton();
+		uniform::auton();
 	} else if (program == "Whiskey") {
-		mike::auton();
+		whiskey::auton();
 	} else if (program == "Xray") {
-		november::auton();
+		xray::auton();
 	} else if (program == "Yankee") {
-		oscar::auton();
+		yankee::auton();
 	} else {
 		right_side_two_mogos();
 	}
