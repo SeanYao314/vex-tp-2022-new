@@ -176,6 +176,21 @@ namespace november {
 namespace oscar {
     void auton();
 }
+namespace uniform {
+    void auton();
+}
+namespace victor {
+    void auton();
+}
+namespace whiskey {
+    void auton();
+}
+namespace xray {
+    void auton();
+}
+namespace yankee {
+    void auton();
+}
 
 namespace screen {
     void setup_screen();
