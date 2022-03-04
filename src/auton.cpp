@@ -114,16 +114,15 @@ void right_side_two_mogos() {
     front_claw_drive(false);
     rear_piston_drive(false);
 
-    // chassis_drive_until_distance(150,200);
     mogo_cover_drive(false);
-    chassis_drive_distance(1940,-200);
+    chassis_drive_distance(2093,-200);
 
     front_claw_drive(true);
-    chassis_drive_distance(655,200);
+    chassis_drive_distance(1960,200);
 
     pros::delay(700);
     double currentPos = imu_sensor.get_heading();
-    chassis_turn((initPos-currentPos)-90);
+    chassis_turn((initPos-currentPos)-100);
     chassis_drive_distance(150,200);
     pros::delay(500);
     rear_piston_drive(true);
@@ -131,19 +130,10 @@ void right_side_two_mogos() {
     arm_right.move_absolute(-700,200);
     arm_left.move_relative(760,200);
 
-    pros::delay(400);
+    pros::delay(1200);
     arm_left.move(-150);
 
-    chassis_drive_distance(320,-90);
-
-    pros::delay(500);
-    chassis_drive_distance(50,80);
-    pros::delay(400);
-    currentPos = imu_sensor.get_heading();
-    chassis_turn((initPos-currentPos)-2);
-
-    chassis_drive_distance(1350,-40);
-    chassis_drive_distance(1350,70);
+    chassis_drive_distance(220,-90);
 
 
 }

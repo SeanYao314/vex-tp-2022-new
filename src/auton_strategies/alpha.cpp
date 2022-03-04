@@ -9,7 +9,7 @@ namespace alpha {
 
         // chassis_drive_until_distance(150,200);
         mogo_cover_drive(false);
-        chassis_drive_distance(2003,-200);
+        chassis_drive_distance(1933,-200);
 
         front_claw_drive(true);
         chassis_drive_distance(655,200);
