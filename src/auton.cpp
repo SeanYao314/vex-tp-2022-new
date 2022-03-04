@@ -115,14 +115,19 @@ void right_side_two_mogos() {
     rear_piston_drive(false);
 
     mogo_cover_drive(false);
-    chassis_drive_distance(2093,-200);
+    chassis_drive_distance(2653,-200);
 
     front_claw_drive(true);
     chassis_drive_distance(1960,200);
+    mogo_cover_drive(false);
 
+    double currentPos = imu_sensor.get_heading();
+    chassis_turn((initPos-currentPos)-120);
+
+    chassis_drive_distance
     pros::delay(700);
     double currentPos = imu_sensor.get_heading();
-    chassis_turn((initPos-currentPos)-100);
+    chassis_turn((initPos-currentPos)-120);
     chassis_drive_distance(150,200);
     pros::delay(500);
     rear_piston_drive(true);
