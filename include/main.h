@@ -78,6 +78,8 @@ void opcontrol(void);
 //#include <iostream>
 #endif
 
+const int ITERATION_INTERVAL = 20;
+
 const int CHASSIS_LEFT_FRONT    = 14;
 const int CHASSIS_LEFT_MIDDLE   = 13;
 const int CHASSIS_LEFT_REAR     = 11;
@@ -142,6 +144,8 @@ void right_side_two_mogos();
 void left_side();
 void right_side_one_mogo_rings();
 
+void graviton_initialize();
+
 #ifdef __cplusplus
 }
 #endif
@@ -192,9 +196,35 @@ namespace yankee {
     void auton();
 }
 
-namespace screen {
+namespace graviton_screen {
     void setup_screen();
     const char * get_selected_program();
+    void set_notif_handler(void (*handler)(const char *, const char *));
+}
+
+namespace recording {
+    struct RecordUnit {
+        short tick;
+        std::vector<int> units;
+        std::vector<std::int32_t> switches;
+    } ;
+
+    void reset(int duration, int interval, void (*post_record_action)(void));
+    void record();
+    void printout();
+    void replay();
+    void set_replay_loader(std::vector<RecordUnit>& (*)(void));
+    void set_motor_group(std::vector<pros::Motor*>&, std::vector<pros::ADIDigitalOut*>&);
+    // void init(std::vector<int>& (*input_device)(void), void (*output_device)(std::vector<int>&), std::vector<RecordUnit>& (*replay_loader)(void));
+    std::vector<RecordUnit>& dump();
+}
+
+namespace storage {
+    bool is_slot_taken(const char * slot_name);
+    bool save_to_slot(std::vector<recording::RecordUnit>& recording, const char * slot_name);
+    void clear_slot(const char * slot_name);
+    void load_all_programs();
+    std::vector<recording::RecordUnit>& get_program(const char *);
 }
 
 #endif  // _PROS_MAIN_H_

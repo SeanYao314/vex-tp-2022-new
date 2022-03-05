@@ -38,7 +38,8 @@ void on_left_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	screen::setup_screen();
+	graviton_initialize();
+	//screen::setup_screen();
 	// pros::lcd::initialize();
 	// pros::lcd::set_text(1, "Hello PROS User!");
 
@@ -91,7 +92,7 @@ void autonomous() {
 	// 	left_side();
 	// }
 
-	auto program = screen::get_selected_program();
+	auto program = graviton_screen::get_selected_program();
 	if (program == "Alpha") {
 		alpha::auton();
 	} else if (program == "Bravo") {
@@ -122,6 +123,8 @@ void autonomous() {
 		xray::auton();
 	} else if (program == "Yankee") {
 		yankee::auton();
+	} else if (program == "Zulu" || program == "Joker" || program == "Phantom" || program == "Ghost") {
+		recording::replay();
 	} else {
 		right_side_two_mogos();
 	}
@@ -218,6 +221,7 @@ void opcontrol() {
 			
 		}
 
-		pros::delay(20);
+		recording::record();
+		pros::delay(ITERATION_INTERVAL);
 	}
 }
