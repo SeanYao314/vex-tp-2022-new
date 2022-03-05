@@ -21,7 +21,7 @@ namespace recording {
     vector<RecordUnit> recording;
     vector<RecordUnit>& (*replay_loader)(void);
     const int threshold = 15;
-    int recording_interval = 50;
+    int recording_interval = ITERATION_INTERVAL;
     int recording_time = 15000;
     int tick = 0;
     void (*post_record_action)(void) = NULL;
