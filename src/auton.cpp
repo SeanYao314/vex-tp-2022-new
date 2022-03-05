@@ -109,37 +109,23 @@ void right_side_one_mogo_rings() {
 }
 
 void right_side_two_mogos() {
-    double initPos = imu_sensor.get_heading();
-    arm_right.move_absolute(20,200);
-    front_claw_drive(false);
-    rear_piston_drive(false);
+    // double initPos = imu_sensor.get_heading();
+    // arm_right.move_absolute(20,200);
+    // front_claw_drive(false);
+    // rear_piston_drive(false);
 
-    mogo_cover_drive(false);
-    chassis_drive_distance(2653,-200);
-
-    front_claw_drive(true);
-    chassis_drive_distance(1960,200);
-    mogo_cover_drive(false);
-
-    double currentPos = imu_sensor.get_heading();
-    chassis_turn((initPos-currentPos)-120);
-
-    chassis_drive_distance
-    pros::delay(700);
-    double currentPos = imu_sensor.get_heading();
-    chassis_turn((initPos-currentPos)-120);
-    chassis_drive_distance(150,200);
-    pros::delay(500);
-    rear_piston_drive(true);
-    arm_right.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
+    // chassis_drive_distance(2163,-70);
+    // front_claw_drive(true);
+    chassis_turn(-20);
     arm_right.move_absolute(-700,200);
-    arm_left.move_relative(760,200);
-
-    pros::delay(1200);
-    arm_left.move(-150);
-
-    chassis_drive_distance(220,-90);
-
+    arm_left.move_relative(600,200);
+    chassis_drive_distance(3800,-60);
+    arm_right.move_absolute(-400,200);
+    arm_left.move_relative(-300,200);
+    chassis_drive(0,150);
+    pros::delay(200);
+    chassis_drive(0,0);
+    front_claw_drive(false);
 
 }
 
