@@ -123,7 +123,8 @@ void autonomous() {
 		xray::auton();
 	} else if (program == "Yankee") {
 		yankee::auton();
-	} else if (program == "Zulu" || program == "Joker" || program == "Phantom" || program == "Ghost") {
+	} else if (program == "Zulu" || program == "Joker" || program == "Phantom" || program == "Ghost"
+				|| program == "Foxtrot" || program == "Golf") {
 		recording::replay();
 	} else {
 		right_side_two_mogos();
