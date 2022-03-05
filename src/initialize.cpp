@@ -44,7 +44,7 @@ vector<pros::Motor*>& get_motor_group() {
         motor_group.push_back(&chassis_right_front);
         motor_group.push_back(&chassis_right_middle);
         motor_group.push_back(&chassis_right_rear);
-        motor_group.push_back(&arm_right);
+        motor_group.push_back(&arm_left);
         motor_group.push_back(&arm_right);
 	}
 
